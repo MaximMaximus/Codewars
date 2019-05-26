@@ -1,0 +1,55 @@
+int dontGiveMeFive(int start, int end)
+{
+  int temp = 0;
+  int val = 0;
+  int count = 0;
+
+  while ( start <= end ){
+    if ( start == 0 ) {
+      start++;
+      count++;
+      continue;
+    }
+    
+    if ( start > 0 ) {
+      temp = start;
+      val = 0;
+      
+      while ( temp > 0 ) {
+        val = temp % 10;
+        temp /= 10;
+        if ( val == 5 ) {
+          val = 0;
+          break;
+        }
+      }
+      
+      if ( val > 0 ) {
+        count ++;
+      }
+      start++;
+    }
+    
+    if ( start < 0 ) {
+      temp = start*-1;
+      val = 0;
+      
+      while ( temp > 0 ) {
+        val = temp % 10;
+        temp /= 10;
+        if ( val == 5 ) {
+          val = 0;
+          break;
+        }
+      }
+      
+      if ( val > 0 ) {
+        count ++;
+      }
+      start++;
+    }
+  }
+ 
+  printf("%d\n", count);
+  return count;
+}
