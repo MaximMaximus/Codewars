@@ -1,0 +1,60 @@
+/*
+double arithmetic(double a, double b, char* operator) {
+  // Your Code here!
+int ergebnis;
+
+if(operator =="add")
+{
+ergebnis = a+b;
+printf("%i", ergebnis);
+return ergebnis;
+}
+
+if(operator =="subtract")
+{
+ergebnis = a-b;
+printf("%i", ergebnis);
+return ergebnis;
+}
+
+if(operator =="multiply")
+{
+ergebnis = a*b;
+printf("%i", ergebnis);
+return ergebnis;
+}
+
+if(operator =="divide")
+{
+ergebnis = a/b;
+printf("%i", ergebnis);
+return ergebnis;
+}
+
+}
+*/
+double arithmetic(double a, double b, char* operator) {
+  // Your Code here!
+int ergebnis;
+
+if(operator =="add")
+{
+ return a+b;
+}
+
+if(operator =="subtract")
+{
+ return a-b;
+}
+
+if(operator =="multiply")
+{
+ return a*b;
+}
+
+if(operator =="divide")
+{
+ return a/b;
+}
+
+}
