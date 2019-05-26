@@ -1,0 +1,35 @@
+#include <stdlib.h> 
+
+char *reverse_letter(const char *str)
+{
+  int i = 0;
+  int j = 0;
+  
+  int lenght;
+  
+  char *output;
+  output = malloc( *str * sizeof(*output) );
+  
+  for ( i = 0; str[i] != '\0'; i++ ) {
+     //printf("%d\n", i);
+  }
+  lenght = i;
+  //printf("%d\n", lenght);
+  
+  i = 0;
+  while(lenght > 0) {
+    if ( str[lenght-1] >= 'A' && str[lenght-1] <= 'Z' || str[lenght-1] >= 'a' && str[lenght-1] <= 'z') {
+      output[i] = str[lenght-1];
+      i++;
+      lenght--;
+    } else { 
+      lenght--;
+    }
+  }
+  output[i] = '\0';
+  
+  //printf("%s", output);
+    
+    
+  return output; //coding and coding..
+}
