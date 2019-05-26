@@ -1,0 +1,15 @@
+int solution(int number) {
+		// code here
+
+int zähler=0;
+
+   for ( int i = 1; i<number; i++)
+   {
+   if(i%3==0 && i%5==0) zähler +=i;
+   if(i%3==0 && i%5!=0) zähler +=i;
+   if(i%5==0 && i%3!=0) zähler +=i;
+   printf("%i\n", zähler);
+   }
+    
+    return zähler;
+}
