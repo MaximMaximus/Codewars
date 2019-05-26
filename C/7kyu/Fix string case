@@ -1,0 +1,39 @@
+#include <stdlib.h>
+#include <string.h>
+char *solve(const char *str)
+{
+  int lowersum = 0;
+  int uppersum = 0;
+  int offset = 32;
+  char *string;
+
+  string = malloc ( *str * sizeof(*string) );
+  strcpy( string, str );
+  
+  int i = 0;
+  for ( i = 0; string[i] != '\0'; i++ ) {
+    if ( string[i] >= 'A' && string[i] <= 'Z' ) {
+      uppersum++;
+    }
+    if ( string[i] >= 'a' && string[i] <= 'z' ) {
+      lowersum++;
+    }
+  } 
+  if (uppersum == 0 ) return string;
+  
+  if ( uppersum > lowersum ) {
+    for ( i = 0; string[i] != '\0'; i++ ) {
+      if ( string[i] >= 'a' && string[i] <= 'z' ) {
+        string[i] -= offset;
+      }
+    }
+  } else {
+    for ( i = 0; string[i] != '\0'; i++ ) {
+      if ( string[i] >= 'A' && string[i] <= 'Z' ) {
+        string[i] += offset;
+      }
+    }
+  }
+    return string; //your code here
+    free(string);
+}
