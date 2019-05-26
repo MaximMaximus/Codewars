@@ -1,0 +1,19 @@
+int persistence(int n) {
+  printf("Number: %d\n", n);
+  if ( n < 10 ) return 0;
+  
+  int sum = 0;
+  int count = 0;
+  while(1) {
+    sum = 1;
+    while ( n > 0 ) {
+      sum *= n%10;
+      n/=10;
+    }
+    n = sum;
+    count++;
+    if ( sum < 10 ) break;
+  }
+
+  return count;
+}
