@@ -1,0 +1,9 @@
+unsigned sequence_sum(unsigned start, unsigned end, unsigned step)
+{
+int speicher = 0;
+for (int i=start; i<=end; i+=step)
+{
+ speicher += i;
+}
+    return speicher;
+}
