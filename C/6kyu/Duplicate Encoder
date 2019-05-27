@@ -1,0 +1,57 @@
+char *tolowercase(char *wort) {
+  int i = 0;
+  int offset = 32;
+  for ( i = 0; wort[i] != '\0'; i++ ) {
+    if ( wort[i] > 64 && wort[i] < 91 ) {
+      wort[i] += offset;
+    }
+  }
+}
+
+
+char *DuplicateEncoder(char *string)
+{
+  char *str;
+  str = malloc ( *string * sizeof(*str) );
+  strcpy(str, string);
+  tolowercase(str);
+  printf("%s\n", str);
+  char alphabet[127][1];
+  int counter[127];
+  int c = 0;
+  int s = 0;
+  
+  for ( c = 0; c < 127; c++, s++ ) {
+    alphabet[c][0] = s;
+    counter[c] = 0;
+    //printf("%c", alphabet[c][0]);
+  }
+  
+  int i = 0;
+  int j = 0;
+  for ( i = 0; str[i] != '\0'; i++ ) {
+    for ( j = 0; j < 127; j++ ) {
+      if ( str[i] == alphabet[j][0] ) {
+          //printf("str %c alphabet %c\n", str[i], alphabet[j][0]);
+        counter[j]++;
+        //printf("alphabet %c counter %d j %d\n", alphabet[j][0], counter[j], j);
+      }
+    }
+  }
+  
+  for ( i = 0; str[i] != '\0'; i++ ) {
+      for ( j = 0; j < 127; j++ ) {
+          //printf("str %c alphabet %c counter %d\n", str[i], alphabet[j][0], counter[j]);
+        if ( str[i] == alphabet[j][0] && counter[j] > 1 ) {
+          str[i] = 41;
+          break;
+        } else if ( str[i] == alphabet[j][0] && counter[j] <= 1 ) {
+          str[i] = 40;
+          break;
+        }
+      }    
+  }
+  //str[i] = '\0';
+  printf("%s\n", str);
+  return  str;
+}
